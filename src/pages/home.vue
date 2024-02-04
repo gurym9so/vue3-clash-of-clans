@@ -1,6 +1,5 @@
 <template>
   <div class="md-body">
-    <p>HOME</p>
     <div class="card__wrapper" v-for="item in items" :key="item.id">
       <Card :name="`${item.lvl} lvl`" :title="item.title" :imgUrl="item.img">
         {{ item.description }}
@@ -11,27 +10,13 @@
 
 <script>
 import Card from "@/components/UI/Card";
+import items from "@/seeders/items.js";
 
 export default {
   components: { Card },
   data() {
     return {
-      items: [
-        {
-          id: 1,
-          title: "Archer",
-          description: "archer archer archer archer",
-          img: require("@/assets/img/archer.png"),
-          lvl: 4,
-        },
-        {
-          id: 2,
-          title: "Wizard",
-          description: "wizard wizard wizard wizard",
-          img: require("@/assets/img/wizard.png"),
-          lvl: 3,
-        },
-      ],
+      items: items,
     };
   },
 };
