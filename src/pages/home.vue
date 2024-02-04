@@ -1,9 +1,10 @@
 <template>
   <div class="md-body">
-    <h1>hello home</h1>
     <p>HOME</p>
     <div class="card__wrapper" v-for="item in items" :key="item.id">
-      <Card :name="`${item.lvl} lvl`" :title="item.title" />
+      <Card :name="`${item.lvl} lvl`" :title="item.title" :imgUrl="item.img">
+        {{ item.description }}
+      </Card>
     </div>
   </div>
 </template>
@@ -20,12 +21,14 @@ export default {
           id: 1,
           title: "Archer",
           description: "archer archer archer archer",
+          img: require("@/assets/img/archer.png"),
           lvl: 4,
         },
         {
           id: 2,
           title: "Wizard",
           description: "wizard wizard wizard wizard",
+          img: require("@/assets/img/wizard.png"),
           lvl: 3,
         },
       ],
