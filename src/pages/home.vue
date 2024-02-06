@@ -7,7 +7,10 @@
         :imgUrl="item.img"
         :link="`/${item.alias}`"
       >
-        {{ item.description }}
+        <template v-slot:body>
+          {{ item.descr }}
+        </template>
+        <template v-slot:footer> </template>
       </Card>
     </div>
   </div>

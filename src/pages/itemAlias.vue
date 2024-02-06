@@ -1,9 +1,15 @@
 <template>
-  <div class="wrapper">
+  <div class="wrapper-person">
     <div v-if="item">
       <img :src="item.img" :alt="item.description" />
-      <h1 class="title">{{ item.title }}</h1>
-      <p>{{ item.description }}</p>
+      <h1 class="title" style="color: #ffffff">{{ item.title }}</h1>
+      <p>{{ item.descr }}</p>
+      <div class="card-stats">
+        <div v-for="(stat, index) in item.info" :key="index" class="one-third">
+          <div class="stat-value">{{ stat.value }}</div>
+          <div class="stat">{{ stat.title }}</div>
+        </div>
+      </div>
       <div>
         <router-link to="/" class="btn btnPrimary"> Back to home </router-link>
       </div>
@@ -28,3 +34,13 @@ export default {
   },
 };
 </script>
+
+<style lang="scss">
+.wrapper-person {
+  text-align: center;
+  .card-stats {
+    border-radius: 14px;
+    margin: 30px 0;
+  }
+}
+</style>
