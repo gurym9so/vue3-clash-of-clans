@@ -1,7 +1,12 @@
 <template>
   <div class="md-body">
     <div class="card__wrapper" v-for="item in items" :key="item.id">
-      <Card :name="`${item.lvl} lvl`" :title="item.title" :imgUrl="item.img">
+      <Card
+        :name="`${item.lvl} lvl`"
+        :title="item.title"
+        :imgUrl="item.img"
+        :link="`/${item.alias}`"
+      >
         {{ item.description }}
       </Card>
     </div>
